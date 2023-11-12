@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Fantasy Grounds is copyright SmiteWorks USA LLC, 2004-2023. All Rights Reserved.
+	
+	No core Fantasy Grounds files have been modified to create this extension.
+	If you want to incorporate this into one of your own extensions, including icons "art", have at it, but just credit me.
+
+	Credit for the plus/minus icon goes to flaticon.com who generously allow free use with attribution:
+	<a href="https://www.flaticon.com/free-icons/plus-minus" title="plus minus icons">Plus minus icons created by Icontive - Flaticon</a>
+-->
+
+<root>
+	<!-- OPTIONS -->
+	<string name="option_header_TND">TN Difference Options</string>
+	<string name="option_label_TND_attacks_over">Highlight attacks above TN</string>
+	<string name="option_label_TND_attacks_under">Highlight attacks below TN</string>
+	<string name="option_label_TND_saves_over">Highlight saves above TN</string>
+	<string name="option_label_TND_saves_under">Highlight saves below TN</string>
+	<string name="option_label_TND_skills_over">Highlight ability checks above TN</string>
+	<string name="option_label_TND_skills_under">Highlight ability checks below TN</string>
+
+	<!-- VALUES -->
+	<string name="option_val_none">Don't highlight</string>
+	<string name="option_val_00">by 0 or more</string>
+	<string name="option_val_01">by 1 or more</string>
+	<string name="option_val_02">by 2 or more</string>
+	<string name="option_val_03">by 3 or more</string>
+	<string name="option_val_04">by 4 or more</string>
+	<string name="option_val_05">by 5 or more</string>
+	<string name="option_val_06">by 6 or more</string>
+	<string name="option_val_07">by 7 or more</string>
+	<string name="option_val_08">by 8 or more</string>
+	<string name="option_val_09">by 9 or more</string>
+	<string name="option_val_10">by 10 or more</string>
+	
+</root>
