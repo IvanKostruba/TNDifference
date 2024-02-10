@@ -18,6 +18,7 @@
 	<string name="option_label_TND_saves_under">Highlight saves below TN</string>
 	<string name="option_label_TND_skills_over">Highlight ability checks above TN</string>
 	<string name="option_label_TND_skills_under">Highlight ability checks below TN</string>
+	<string name="option_label_TND_multiples">Highlight excess multiples (x2 and x3)</string>
 
 	<!-- VALUES -->
 	<string name="option_val_none">Don't highlight</string>
