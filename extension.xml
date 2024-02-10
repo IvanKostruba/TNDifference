@@ -12,12 +12,13 @@
 		1.0.0 - Initial release
 		1.0.1 - Fixed bug with manually entered results and with incorrect handling of ADV/DISADV for ability checks.
 		1.0.2 - Fixed sending of empty messages when highlight threshold was not reached.
+		1.1.0 - Added an option to highlight multiples of TN excess i.e. x2 and x3. Higher excesses have no icons.
 -->
-<root version="1.0" release="1.0.2">
-	<announcement text="illahad's TN-Difference v1.0.2 for 5E ruleset." font="emotefont" icon="splash_icon"/>
+<root version="1.0" release="1.1.0">
+	<announcement text="illahad's TN-Difference v1.1.0 for 5E ruleset." font="emotefont" icon="splash_icon"/>
  	<properties>
 		<name>Feature: illahad's TN-Difference</name>
-		<version>1.0.2</version>
+		<version>1.1.0</version>
 		<author>illahad (Ivan Kostruba)</author>
 		<description>Highlight rolls that differ from the target by a given amount.</description>
 		<description>This extension allows to set up thresholds for attacks, saves and skill checks. When a roll exceeds or falls under the TN by this or greater amount, an icon and a message will be displayed in chat.</description>
@@ -29,8 +30,12 @@
 		<icon name="splash_icon" file="images/plus-minus.png" />
 		<includefile source="strings/tn_difference.xml"/>
 
-		<icon name="over_tn" file="images/over_target_number.png" />
-		<icon name="under_tn" file="images/under_target_number.png" />
+		<icon name="over_tn_1" file="images/over_target_number.png" />
+		<icon name="under_tn_1" file="images/under_target_number.png" />
+		<icon name="over_tn_2" file="images/over_target_number_2.png" />
+		<icon name="under_tn_2" file="images/under_target_number_2.png" />
+		<icon name="over_tn_3" file="images/over_target_number_3.png" />
+		<icon name="under_tn_3" file="images/under_target_number_3.png" />
 
 		<script name="TnDifference" file="scripts/TnDifference.lua" />
 	</base>
