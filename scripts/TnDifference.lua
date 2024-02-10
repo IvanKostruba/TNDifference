@@ -25,6 +25,10 @@ function registerOptions()
 		"TND_show_skills_under", false, "option_header_TND", "option_label_TND_skills_under", "option_entry_cycler",
 		{labels=numbers, values ="1|2|3|4|5|6|7|8|9|10", baselabel="option_val_none", baseval="none", default="none"}
 	)
+	OptionsManager.registerOption2(
+		"TND_show_multiples", false, "option_header_TND", "option_label_TND_multiples", "option_entry_cycler",
+		{labels="option_val_on", values ="on", baselabel="option_val_off", baseval="off", default="off"}
+	)
 end
 
 function onInit()
@@ -67,17 +71,26 @@ function highlightThreshold(sOpt)
 	end
 end
 
+function excessMultiplierForDisplay(nDiff, nThreshold)
+	if OptionsManager.getOption("TND_show_multiples") ~= "on" then return 1 end
+	local m = math.floor(math.abs(nDiff) / nThreshold)
+	if m > 3 then m = 3 end  -- currently we only have icons to highlight x3 excess
+	return m
+end
+
 function prepareChatMessages(nDiff, sOverOpt, sUnderOpt, sTargetName)
 	local text = ""
 	local icon = ""
-	overTreshold = highlightThreshold(sOverOpt)
-	underThreshold = highlightThreshold(sUnderOpt)
-	if overTreshold and nDiff >= overTreshold then
-		text = string.format("OVER %s BY [%d] OR MORE", sTargetName, overTreshold)
-		icon = "over_tn"
+	local overThreshold = highlightThreshold(sOverOpt)
+	local underThreshold = highlightThreshold(sUnderOpt)
+	if overThreshold and nDiff >= overThreshold then
+		local m = excessMultiplierForDisplay(nDiff, overThreshold)
+		text = string.format("OVER %s BY [%d] OR MORE", sTargetName, overThreshold * m)
+		icon = string.format("over_tn_%d", m)
 	elseif underThreshold and nDiff <= -underThreshold then
-		text = string.format("UNDER %s BY [%d] OR MORE", sTargetName, underThreshold)
-		icon = "under_tn"
+		local m = excessMultiplierForDisplay(nDiff, underThreshold)
+		text = string.format("UNDER %s BY [%d] OR MORE", sTargetName, underThreshold * m)
+		icon = string.format("under_tn_%d", m)
 	end
 	if text == "" then return nil, nil end
 	local msgShort = { font = "msgfont", ["text"] = text, ["icon"] = icon}
