@@ -13,17 +13,24 @@
 		1.0.1 - Fixed bug with manually entered results and with incorrect handling of ADV/DISADV for ability checks.
 		1.0.2 - Fixed sending of empty messages when highlight threshold was not reached.
 		1.1.0 - Added an option to highlight multiples of TN excess i.e. x2 and x3. Higher excesses have no icons.
+		1.1.1 - Added support for PF2e rulesets.
 -->
-<root version="1.0" release="1.1.0">
-	<announcement text="illahad's TN-Difference v1.1.0 for 5E ruleset." font="emotefont" icon="splash_icon"/>
+<root version="1.0" release="1.1.1">
+	<announcement text="illahad's TN-Difference v1.1.1 for 5E/PFRPG2 ruleset." font="emotefont" icon="splash_icon"/>
  	<properties>
 		<name>Feature: illahad's TN-Difference</name>
-		<version>1.1.0</version>
+		<version>1.1.1</version>
 		<author>illahad (Ivan Kostruba)</author>
 		<description>Highlight rolls that differ from the target by a given amount.</description>
 		<description>This extension allows to set up thresholds for attacks, saves and skill checks. When a roll exceeds or falls under the TN by this or greater amount, an icon and a message will be displayed in chat.</description>
 		<ruleset>
 			<name>5E</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG2</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG2-Legacy</name>
 		</ruleset>
 	</properties>
 	<base>
@@ -38,5 +45,10 @@
 		<icon name="under_tn_3" file="images/under_target_number_3.png" />
 
 		<script name="TnDifference" file="scripts/TnDifference.lua" />
+
+		<!-- Ruleset -->
+		<includefile ruleset="5E" source="5E/5E.xml" />
+		<includefile ruleset="PFRPG2" source="PFRPG2/PFRPG2.xml" />
+		<includefile ruleset="PFRPG2-Legacy" source="PFRPG2-Legacy/PFRPG2-Legacy.xml" />
 	</base>
 </root>

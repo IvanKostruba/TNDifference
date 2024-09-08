@@ -33,30 +33,7 @@ end
 
 function onInit()
 	registerOptions()
-
-	ActionAttack.applyAttackTNDOrig = ActionAttack.applyAttack
-	ActionAttack.applyAttack = applyAttackDecorator
-
-	ActionSave.applySaveTNDOrig = ActionSave.applySave
-	ActionSave.applySave = applySaveDecorator
-
-	ActionCheck.onRollTNDOrig = ActionCheck.onRoll
-	ActionCheck.onRoll = checkRollDecorator
-	-- have to re-register since we replaced the registered function
-	ActionsManager.registerResultHandler("check", ActionCheck.onRoll)
-
-	ActionSkill.onRollTNDOrig = ActionSkill.onRoll
-	ActionSkill.onRoll = skillRollDecorator
-	ActionsManager.registerResultHandler("skill", ActionSkill.onRoll)
-end
-
-function onPreAttackDecorator(rSource, rTarget, rRoll, rMessage)
-	-- Call the original onPreAttackResolve function
-	ActionAttack.onPreAttackResolveTNDOrig(rSource, rTarget, rRoll, rMessage)
-	if rRoll.nDefenseVal == nil then
-		return
-	end
-	setTnDiffState(rSource, rTarget, rRoll.nTotal - rRoll.nDefenseVal)
+	TnDifference_ruleset.init()
 end
 
 function highlightAttacks()
