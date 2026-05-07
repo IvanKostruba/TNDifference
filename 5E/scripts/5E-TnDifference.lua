@@ -9,8 +9,5 @@ function init()
 	ActionCheck.onRoll = TnDifference.checkRollDecorator
 	-- have to re-register since we replaced the registered function
 	ActionsManager.registerResultHandler("check", ActionCheck.onRoll)
-
-	ActionSkill.onRollTNDOrig = ActionSkill.onRoll
-	ActionSkill.onRoll = TnDifference.skillRollDecorator
-	ActionsManager.registerResultHandler("skill", ActionSkill.onRoll)
+	ActionsManager.registerResultHandler("skill", ActionCheck.onRoll)
 end

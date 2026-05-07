@@ -132,17 +132,3 @@ function checkRollDecorator(rSource, rTarget, rRoll)
 		end
 	end
 end
-
-function skillRollDecorator(rSource, rTarget, rRoll)
-	-- call the original onRoll method
-	ActionSkill.onRollTNDOrig(rSource, rTarget, rRoll)
-
-	if highlightSkills() and rRoll.nTarget ~= nil and rRoll.nTarget ~= 0 then
-		local rollTotal = ActionsManager.total(rRoll);
-		local msgShort, _ = prepareChatMessages(
-			rollTotal - rRoll.nTarget, "TND_show_skills_over", "TND_show_skills_under", "DC")
-		if msgShort ~= nil then
-			Comm.deliverChatMessage(msgShort)
-		end
-	end
-end

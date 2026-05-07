@@ -14,12 +14,13 @@
 		1.0.2 - Fixed sending of empty messages when highlight threshold was not reached.
 		1.1.0 - Added an option to highlight multiples of TN excess i.e. x2 and x3. Higher excesses have no icons.
 		1.1.1 - Added support for PF2e rulesets.
+		1.1.2 - Adjust for changes in CoreRPG ruleset.
 -->
-<root version="1.0" release="1.1.1">
-	<announcement text="illahad's TN-Difference v1.1.1 for 5E/PFRPG2 ruleset." font="emotefont" icon="splash_icon"/>
+<root version="1.0" release="1.1.2">
+	<announcement text="illahad's TN-Difference v1.1.2 for 5E/PFRPG2 ruleset." font="emotefont" icon="splash_icon"/>
  	<properties>
 		<name>Feature: illahad's TN-Difference</name>
-		<version>1.1.1</version>
+		<version>1.1.2</version>
 		<author>illahad (Ivan Kostruba)</author>
 		<description>Highlight rolls that differ from the target by a given amount.</description>
 		<description>This extension allows to set up thresholds for attacks, saves and skill checks. When a roll exceeds or falls under the TN by this or greater amount, an icon and a message will be displayed in chat.</description>
